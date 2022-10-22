@@ -68,6 +68,8 @@ pipeline {
 -var="aws_secret_key=$aws_secret_key"'
                               }
          }
+      }
+  }
  }
 }
 
