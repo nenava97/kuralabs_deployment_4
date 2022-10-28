@@ -26,3 +26,6 @@ output "instance_ip" {
   value = aws_instance.web_server01.public_ip
   
 }
+resource "aws_vpc" "my_vpc" {
+   vpc_id            = "vpc-0ec1a86054942447c"
+}
