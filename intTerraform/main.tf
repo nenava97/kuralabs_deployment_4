@@ -26,3 +26,10 @@ output "instance_ip" {
   value = aws_instance.web_server01.public_ip
   
 }
+resource "aws_vpc" "my_vpc" {
+  cidr_block = "172.16.0.0/16"
+
+  tags = {
+    Name = "tf-example"
+  }
+}
