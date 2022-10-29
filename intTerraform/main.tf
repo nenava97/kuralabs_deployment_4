@@ -13,6 +13,7 @@ resource "aws_instance" "web_server01" {
   instance_type = "t2.micro"
   key_name = "key3"
   vpc_security_group_ids = [aws_security_group.web_ssh.id]
+  subnet_id = "vpc-0ec1a86054942447c"
 
   user_data = "${file("deploy.sh")}"
 
@@ -25,15 +26,4 @@ resource "aws_instance" "web_server01" {
 output "instance_ip" {
   value = aws_instance.web_server01.public_ip
   
-}
-variable "vpc_id" {}
-
-data "aws_vpc" "selected" {
-  id = var.vpc_id
-}
-
-resource "aws_subnet" "example" {
-  vpc_id            = data.aws_vpc.selected.id
-  availability_zone = "us-east-1a"
-  cidr_block        = cidrsubnet(data.aws_vpc.selected.cidr_block, 4, 1)
 }
