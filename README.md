@@ -2,6 +2,8 @@
 
 This deployment build, tests and deploys a url-shortner Flask app with Jenkins in two ways. A EC2 with Jenkins is created and configured with AWS credentials. Jenkins runs the pipeline in the Jenkinsfile, which contains Terraform commands of init, plan, to apply a terraform folder which create another EC2 instance in a default VPC for the first way and in a VPC we create in with Terraform in VSC for the second way. A bash script is then run to deploy the application code from the GitHub reposiitory with Gunicorn from the created instance.  
 
+<img width="573" alt="Screen Shot 2022-10-29 at 4 02 54 AM" src="https://user-images.githubusercontent.com/108698688/198820886-b942eecc-f4e8-47e3-b000-cb963c561911.png">
+
 ## First Way: Configure Jenkins server in EC2 (created in AWS) and install Terraform to build another EC2 instance from which application will be deployed.
 
 1. Create first EC2 in public subnet on default VPC with Jenkins server.
