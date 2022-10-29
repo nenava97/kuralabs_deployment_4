@@ -1,8 +1,3 @@
-variable "vpc_id" {}
-
-data "aws_vpc" "selected" {
-  id = var.vpc_id
-}
 
 resource "aws_security_group" "web_ssh" {
   name        = "ssh-access"
