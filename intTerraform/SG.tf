@@ -1,3 +1,6 @@
+data "aws_vpc" "selected" {
+  id = var.vpc_id
+}
 
 resource "aws_security_group" "web_ssh" {
   name        = "ec2-access"
