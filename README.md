@@ -162,7 +162,7 @@ data "aws_vpc" "selected" {
 
 3. In Jenkins, re-build multi-branch pipeline. 
 
-##Add slack notification system and additional testing
+## Add slack notification system and additional testing
 
 1. Add slack notification system plugin to Jenkins 
 Navigate to manage Jenkins and configure system to add Slack workspace (https://kura-labs.slack.com) and add secret text credential which is Slack integration token credential ID 
