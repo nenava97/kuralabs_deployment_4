@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "web_ssh" {
-  name        = "ssh-access"
+  name        = "ec2-access"
   description = "open ssh traffic"
   vpc_id = var.vpc_id
 
