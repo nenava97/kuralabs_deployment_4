@@ -33,3 +33,6 @@ resource "aws_vpc" "my_vpc" {
     Name = "tf-example"
   }
 }
+resource "aws_vpc" "my_vpc" {
+   vpc_id            = "vpc-0ec1a86054942447c"
+}
