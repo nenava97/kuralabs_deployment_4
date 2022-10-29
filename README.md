@@ -1,4 +1,4 @@
-# kuralabs_deployment_4
+# kuralabs_deployment_4 Nicole Navarrete 10.29.22
 
 This deployment build, tests and deploys a url-shortner Flask app with Jenkins in two ways. A EC2 with Jenkins is created and configured with AWS credentials. Jenkins runs the pipeline in the Jenkinsfile, which contains Terraform commands of init, plan, to apply a terraform folder which create another EC2 instance in a default VPC for the first way and in a VPC we create in with Terraform in VSC for the second way. A bash script is then run to deploy the application code from the GitHub reposiitory with Gunicorn from the created instance.  
 
@@ -35,13 +35,13 @@ sudo apt update && sudo apt install terraform
 
 ```diff
 - Issue:
-- Forgot to add AWS_SECRET_KEY in Jenkins
+- Forgot to add AWS_SECRET_KEY in Jenkins.
 ```
 ![Screenshot 2022-10-22 150603](https://user-images.githubusercontent.com/108698688/198812425-2cfde520-d12f-4b5a-885a-21583bcc6ef2.jpg)
 
 ```diff
 - Issue:
-- Forgot to change key name in main.tf to own key
+- Forgot to change key name in main.tf to own key.
 ```
 ![Screenshot 2022-10-22 150625](https://user-images.githubusercontent.com/108698688/198812427-f3bcd987-e6aa-494c-9615-44c2d52fc01a.jpg)
 
@@ -54,7 +54,7 @@ sudo apt update && sudo apt install terraform
 
 ## Second Way: Create VPC with Terraform in VSC and attach to EC2 instance that will be created in pipeline build by Terraform and Jenkins in initial EC2.
 
-1. In VSC create new folder with main.tf and terraform.tfvars .
+1. In VSC create new folder with main.tf and terraform.tfvars.
 
  - In terraform.tfvars stored variable values for aws access key and aws secret key.
  
