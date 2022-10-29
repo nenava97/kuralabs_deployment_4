@@ -6,6 +6,11 @@ This deployment build, tests and deploys a url-shortner Flask app with Jenkins i
 
 1. Create first EC2 in public subnet on default VPC with Jenkins server.
 
+```diff
+- Issue:
+- Ensure security group has HTTP 80, Custon TCP 8080, SSH 22, Custon TCP 8000 and Custon TCP 5000. When first made EC2 didn't have all and had HTTP errors later while trying to reach application webpage.
+```
+
 - Run the following script in EC2 CLI to install packages needed for Jenkins (including java).
 ```
 #!/bin/bash
