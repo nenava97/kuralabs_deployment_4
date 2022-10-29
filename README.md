@@ -35,19 +35,19 @@ sudo apt update && sudo apt install terraform
 
 ```diff
 - Issue:
-Forgot to add AWS_SECRET_KEY in Jenkins
+- Forgot to add AWS_SECRET_KEY in Jenkins
 ```
 ![Screenshot 2022-10-22 150603](https://user-images.githubusercontent.com/108698688/198812425-2cfde520-d12f-4b5a-885a-21583bcc6ef2.jpg)
 
 ```diff
 - Issue:
-Forgot to change key name in main.tf to own key
+- Forgot to change key name in main.tf to own key
 ```
 ![Screenshot 2022-10-22 150625](https://user-images.githubusercontent.com/108698688/198812427-f3bcd987-e6aa-494c-9615-44c2d52fc01a.jpg)
 
 ```diff
 - Issue:
-After adding the destroy stage, the Jenkins build took too long to load due to resource contention had to abort and reboot EC2. 
+- After adding the destroy stage, the Jenkins build took too long to load due to resource contention had to abort and reboot EC2. 
 ```
 ![Screenshot 2022-10-28 183516](https://user-images.githubusercontent.com/108698688/198812433-03cab743-1cae-4a6f-b3dc-1379b8c6debc.jpg)
 
@@ -137,7 +137,7 @@ vpc_id = var.vpc_id
 
 ```diff
 - Issue:
-Security group of VPC was named "ssh-access", since all resource names must be unique I had to change the security group name of this EC2 to "ec2-access" so wouldn't have error.
+- Security group of VPC was named "ssh-access", since all resource names must be unique I had to change the security group name of this EC2 to "ec2-access" so wouldn't have error.
 ```
 
 - In main.tf added data source as VPC just made for resource EC2 being created.
@@ -152,7 +152,7 @@ data "aws_vpc" "selected" {
 
 ```diff
 - Issue:
-Before adding this, got error that subnet id and security group were in different networks. 
+- Before adding this, got error that subnet id and security group were in different networks. 
 ```
 
 3. In Jenkins, re-build multi-branch pipeline. 
