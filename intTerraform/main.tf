@@ -26,6 +26,14 @@ output "instance_ip" {
   value = aws_instance.web_server01.public_ip
   
 }
-resource "aws_vpc" "my_vpc" {
-   vpc_id            = "vpc-0ec1a86054942447c"
+variable "vpc_id" {}
+
+data "aws_vpc" "selected" {
+  id = var.vpc_id
+}
+
+resource "aws_subnet" "example" {
+  vpc_id            = data.aws_vpc.selected.id
+  availability_zone = "us-east-1a"
+  cidr_block        = cidrsubnet(data.aws_vpc.selected.cidr_block, 4, 1)
 }
