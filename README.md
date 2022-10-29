@@ -2,7 +2,7 @@
 
 This deployment build, tests and deploys a url-shortner Flask app with Jenkins in two ways. A EC2 with Jenkins is created and configured with AWS credentials. Jenkins runs the pipeline in the Jenkinsfile, which contains Terraform commands of init, plan, to apply a terraform folder which create another EC2 instance in a default VPC for the first way and in a VPC we create in with Terraform in VSC for the second way. A bash script is then run to deploy the application code from the GitHub reposiitory with Gunicorn from the created instance.  
 
-##First Way: Configure Jenkins server in EC2 (created in AWS) and install Terraform to build another EC2 instance from which application will be deployed.
+## First Way: Configure Jenkins server in EC2 (created in AWS) and install Terraform to build another EC2 instance from which application will be deployed.
 
 1. Create first EC2 in public subnet on default VPC with Jenkins server.
 
@@ -52,7 +52,7 @@ After adding the destroy stage, the Jenkins build took too long to load due to r
 ![Screenshot 2022-10-28 183516](https://user-images.githubusercontent.com/108698688/198812433-03cab743-1cae-4a6f-b3dc-1379b8c6debc.jpg)
 
 
-##Second Way: Create VPC with Terraform in VSC and attach to EC2 instance that will be created in pipeline build by Terraform and Jenkins in initial EC2.
+## Second Way: Create VPC with Terraform in VSC and attach to EC2 instance that will be created in pipeline build by Terraform and Jenkins in initial EC2.
 
 1. In VSC create new folder with main.tf and terraform.tfvars .
 
@@ -164,9 +164,9 @@ Navigate to manage Jenkins and configure system to add Slack workspace (https://
 
 2. Add test in code stored in GitHub repository that will check if a get request to the application web page returns a status code HTTP 200 OK (success) and if a post request returns a HTTP 405 Method Not Allowed (error)
 
-##Successful build!
+## Successful build!
 ![Screenshot 2022-10-28 234309](https://user-images.githubusercontent.com/108698688/198812435-3882937c-a051-4e5e-8cc0-e87802fa5be6.jpg)
 
-##Improvements
+## Improvements
 - Utilize modules to create a VPC in the intTerraform folder and then reference it for EC2 module instead of creating the VPC first on our own in VSC.
 - Create one security group for both the VPC and EC2 to use instead of separate ones. 
