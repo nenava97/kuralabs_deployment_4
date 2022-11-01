@@ -12,7 +12,7 @@ resource "aws_security_group" "web_ssh" {
   }
 
   ingress {
-    from_port = 5000
+    from_port = 8000
     to_port = 8000
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
@@ -31,5 +31,8 @@ resource "aws_security_group" "web_ssh" {
     "Name" : "Web server001"
     "Terraform" : "true"
   }
-  
+  output "web_server01-pub" {
+  value = aws_instance.web_server01.public_ip
+
+}
 }
