@@ -33,7 +33,7 @@ resource "aws_subnet" "prod-subnet-public-1" {
     }
 }
 resource "aws_route_table" "prod-public-crt" {
-    vpc_id = "${aws_vpc.main-vpc.id}"
+    vpc_id = "${aws_vpc.prod-vpc.id}"
     
     route {
         //associated subnet can reach everywhere
