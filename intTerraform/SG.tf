@@ -1,7 +1,6 @@
 resource "aws_security_group" "web_ssh" {
-  name        = "ec2-access"
+  name        = "ssh-access"
   description = "open ssh traffic"
-  vpc_id = var.vpc_id
 
   ingress {
     from_port = 22
