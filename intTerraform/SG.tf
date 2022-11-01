@@ -1,7 +1,8 @@
 resource "aws_security_group" "web_ssh" {
   name        = "ssh-access"
   description = "open ssh traffic"
-  vpc_id = "${aws_vpc.prod-vpc.id}"
+  vpc_id      = aws_vpc.prod-vpc.id
+ 
 
   ingress {
     from_port = 22
@@ -19,7 +20,6 @@ resource "aws_security_group" "web_ssh" {
 
   }
 
-  }
   egress {
     from_port = 0
     to_port = 0
@@ -31,8 +31,5 @@ resource "aws_security_group" "web_ssh" {
     "Name" : "Web server001"
     "Terraform" : "true"
   }
-  output "web_server01-pub" {
-  value = aws_instance.web_server01.public_ip
-
-}
+  
 }
