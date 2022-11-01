@@ -40,16 +40,15 @@ resource "aws_route_table" "prod-public-crt" {
         //CRT uses this IGW to reach internet
         gateway_id = "${aws_internet_gateway.prod-igw.id}" 
     }
-      # Route table Association with Public Subnet's
- resource "aws_route_table_association" "PublicRTassociation" {
-    subnet_id = aws_subnet.prod-subnet-public-1.id
-    route_table_id = aws_route_table.prod-public-crt.id
- }
     tags = {
         "Name" : "prod-public-crt"
     }
 }
-
+     # Route table Association with Public Subnet's
+ resource "aws_route_table_association" "PublicRTassociation" {
+    subnet_id = aws_subnet.prod-subnet-public-1.id
+    route_table_id = aws_route_table.prod-public-crt.id
+ }
 resource "aws_instance" "web_server01" {
   ami = "ami-08c40ec9ead489470"
   instance_type = "t2.micro"
