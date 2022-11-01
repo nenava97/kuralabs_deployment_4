@@ -14,7 +14,6 @@ resource “aws_vpc” “prod-vpc” {
     enable_dns_hostnames = “true” #gives you an internal host name
     enable_classiclink = “false”
     instance_tenancy = “default”    
-    
     tags {
         Name = “prod-vpc”
     }
@@ -68,5 +67,3 @@ output "instance_ip" {
   value = aws_instance.web_server01.public_ip
   
 }
-
-
